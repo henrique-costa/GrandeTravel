@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CreateBookingVM
+
+<div class="container margin-top margin-bottom ">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <h2>Book Travel Package</h2>
+            <form asp-controller="Booking" asp-action="Create" method="post" role="form" asp-antiforgery="true">
+                <div class="form-group">
+                    <label asp-for="StartDate"></label>
+                    <input asp-for="StartDate" value="@DateTime.Today" type="date" class="form-control">
+                    <span class="text-danger" asp-validation-for="StartDate"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NumberOfPeople"></label>
+                    <input asp-for="NumberOfPeople" class="form-control">
+                    <span class="text-danger" asp-validation-for="NumberOfPeople"></span>
+                </div>
+                
+                <div>
+                    <input type="hidden" asp-for="PackageId" />
+                </div>
+                <button type="submit" class="btn btn-default">Book</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

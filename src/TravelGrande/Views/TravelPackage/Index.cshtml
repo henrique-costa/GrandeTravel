@@ -1,0 +1,83 @@
+﻿
+@model GetTravelPackagesVM
+
+<div class="container margin-top margin-bottom">
+
+
+
+    @if (Model.ResultMessage != null)
+    {
+        <h3>@Model.ResultMessage</h3>
+
+
+    }
+    else
+    {
+
+        <h1>Packages: </h1>
+        <p>Number of Packages: @Model.Total</p>
+        <table class="table table-striped hidden">
+            @foreach (var item in Model.TravelPackages)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Location</td>
+                    <td>@item.ProviderName</td>
+                    @if (!item.Discontinued)
+                    {
+                        <td class="text-success">Active</td>
+                    }
+                    else
+                    {
+                        <td class="text-danger">Inactive</td>
+                    }
+                    <td><a asp-controller="TravelPackage" asp-action="Display" asp-route-id="@item.TravelPackageId">Read More</a></td>
+                </tr>
+            }
+        </table>
+
+        
+
+    }
+    @if (User.IsInRole("Provider") || User.IsInRole("Admin"))
+    {
+
+        <a asp-controller="TravelPackage" role="button" class="btn btn-success margintop" asp-action="Create">Create Package</a>
+    }
+
+
+    <div class="row">
+        @foreach (var item in Model.TravelPackages)
+            {
+            <div class="col-xs-12 col-sm-12 col-md-4 margintop">
+
+                @*<div class="thumbnail red shadow">*@
+                <div class="thumbnail shadow">
+
+                    <a asp-controller="TravelPackage" asp-action="Details" asp-route-id="@item.TravelPackageId"><img src="~/Uploads/TravelPackages/@item.PhotoPath" class="IndexThumb" /></a>
+
+                    <div class="caption">
+                        <h3 class="text-color-blue"><strong>@item.Name</strong></h3>
+                        <p><i class="fa fa-map-marker localIcon" aria-hidden="true"></i> <strong class="location">@item.Location</strong></p>
+                        <p>@item.Description asda </p>
+
+
+                        <a asp-controller="TravelPackage" asp-action="Display" asp-route-id="@item.TravelPackageId" class="btn btn-info " role="button">View Details</a>
+
+                        @if (User.IsInRole("Admin") || User.Identity.Name == item.ProviderName)
+                        {
+                            <a asp-controller="TravelPackage" asp-action="Update" asp-route-id="@item.TravelPackageId" class="btn btn-default" role="button"><i class="fa fa-gears"></i> Edit</a>
+                        }
+
+
+                        <span class="pull-right price">$@item.Price,00</span>
+
+                    </div>
+                    <!--For each-->
+                </div> @*thumbnail end*@                
+            </div><!--Else-->
+        }
+
+
+    </div><!--Row-->
+</div><!--container-->

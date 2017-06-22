@@ -1,0 +1,93 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model DisplaySingleTravelPackageVM
+
+
+<div class="container margin-top margin-bottom">
+    <div id="detailsContent">
+        <div class="row">
+            <div class="col-lg-5 col-md-6 col-sm-6 text-center" id="displaySingleBox">
+                <h1 id="detailsHead"><i><strong>@Model.Name</strong></i></h1>
+
+                @if (!Model.Discontinued)
+                {
+                    <span class="text-success">
+                        Active
+                    </span>
+                }
+                else
+                {
+                    <span class="text-danger">
+                        Inactive
+                    </span>
+                }
+
+                <h6><em>posted by</em> @Model.ProviderName</h6>
+                <h3><span class="fa fa-map-marker"></span> @Model.Location</h3>
+                <h3><span class="fa fa-map"></span> @Model.State</h3>
+                <hr />
+                <h3><strong>Package Includes:</strong></h3>
+                    <ul>
+                        <li>@Model.Description</li>
+                    </ul>
+                <br />
+                <hr />
+                <span><i>from </i></span><span id="price"><strong> $@Model.Price</strong></span><br />
+
+
+            </div>
+            <div class="col-lg-6 col-lg-offset-1  col-md-6 col-sm-6">
+                <div class="panel panel-default" id="detailImg">
+                    <div class="panel-body" id="panelImage">
+                        <img id="PackageImg" class="img-responsive" src="~/Uploads/TravelPackages/@Model.PackPhotoPath" alt="Picture" />
+                    </div>
+                </div>
+            </div>
+        </div> <!--row ends-->
+
+        @if (Model.Feedbacks != null)
+        {
+            <div class="row">
+                <div class="col-lg-4  col-md-6  col-sm-6">
+                    <div class="text-center" id="ReviewList">
+                        <h4>Reviews</h4>
+                        <ul id="commentList">
+                            @foreach (var item in Model.Feedbacks)
+                            {
+                                <li>
+                                    <br />
+                                    @item.Comment
+                                    <ul>
+                                        <li class="text-right"><i>Posted by </i>@item.UserName</li>
+                                    </ul>
+                                    <hr />
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+        <div class="text-center">
+            @if (User.IsInRole("Admin") || Model.ProviderName == User.Identity.Name)
+            {
+                <a asp-controller="TravelPackage" asp-action="Update" asp-route-id="@Model.PackageId" class="btn btn-warning" role="button">Update</a>
+            }
+
+            @if (User.IsInRole("Provider") || User.IsInRole("Admin"))
+            {
+                <a asp-controller="TravelPackage" class="btn btn-success" role="button" asp-action="Create">Create</a>
+            }
+            @if (User.IsInRole("Customer"))
+            {
+                <a asp-controller="Booking" class="btn btn-success" role="button" asp-route-id="@Model.PackageId" asp-action="Create">Book</a>
+            }
+        </div>
+</div>
+

@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model DisplayAllPackagesPerProviderVM
+
+<div class="container margin-top margin-bottom">
+    
+    
+    <h2>@Model.ProviderName packages:</h2>
+        <table class="table table-striped">
+            @foreach (var item in Model.Packages)
+            {
+                <tr>
+
+                    <td>@item.Name</td>
+                    <td>@item.Location</td>
+                    <td>@item.ProviderName</td>
+                    @if (!item.Discontinued)
+                {
+                        <td class="text-success">Active</td>
+                    }
+                    else
+                    {
+                        <td class="text-danger">Inactive</td>
+                    }
+                    <td><a asp-controller="TravelPackage" asp-action="Display" asp-route-id="@item.TravelPackageId">Read More</a></td>
+                </tr>
+            }
+        </table>
+    
+
+
+</div>

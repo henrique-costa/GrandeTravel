@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    
+}
+@model GetTravelPackagesVM
+<div class="jumbotron">
+    <div class="container centerme text-center">
+        <form asp-controller="TravelPackage" asp-action="Index" method="get" role="form">
+            <div class="row form-group">
+                <h1 align="center" style="color:azure">Where to go?</h1> <br />
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3"></div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 sec">
+                            <input asp-for="MinPrice" class="form-control homeSearch" placeholder="Min Price">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3 sec">
+                            <input asp-for="MaxPrice" class="form-control homeSearch currency-tool" placeholder="Max Price">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3"></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3"></div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <input asp-for="LocationQuery" class="form-control homeSearch magnifier-tool" type="text" placeholder="Destination...">
+
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-3"></div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-5"></div>
+                        <div class="col-md-2 col-sm-2 col-xs-3"><button class="btn-primary btn-lg" type="submit">
+                             Go <i class="fa fa-plane" aria-hidden="true"></i>
+                        </button></div>
+                        <div class="col-md-5 col-sm-5 col-xs-35"></div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+    </div>    
+</div>
+
+@*<div class="container-fluid bg-2 text-center">
+    <h3>What Am I?</h3>
+    <p>Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. Lorem ipsum.. </p>
+</div>*@
+

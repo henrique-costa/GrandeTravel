@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <title>@ViewData["Title"] - EFProject</title>
+    <link href="~/css/CyborgBootstrap.css" rel="stylesheet" />
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/CSS/site.css" rel="stylesheet" />
+    <link href="~/lib/fontawesome/css/font-awesome.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--
+     ********************************************************************
+     * Navbar
+     ********************************************************************
+     -->   
+    <!------------------------------------------------------------------------------------------->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navMain">
+                    <span class="fa fa-caret-down" style="color:white;"></span>
+
+                </button>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TravelGrande</a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="navMain">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="TravelPackage" asp-action="Index">BROWSE PACKAGES<span class="sr-only"></span></a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a></li>
+
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user fa-2x"></span> @User.Identity.Name <span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Admin Options</li>
+                                <li><a asp-area="" asp-controller="Profile" asp-action="UpdateCustomerProfile" class="fa fa-edit"> PROFILE</a></li>
+
+                                @*<li><a href="#">MANAGE ROLES</a></li>*@
+                                <li class="divider"></li>
+                                <li><a asp-area="" asp-controller="Account" asp-action="Logout" class="fa fa-sign-out"> LOGOUT</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else if (User.Identity.IsAuthenticated && User.IsInRole("Provider"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user fa-2x"></span> @User.Identity.Name <span class="fa fa-caret-down"></span></a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class="dropdown-header">Provider Options</li>
+
+                                <li><a asp-area="" asp-controller="Profile" asp-action="UpdateProviderProfile" class="fa fa-edit"> PROFILE</a></li>
+
+                                <li><a asp-area="" asp-controller="TravelPackage" asp-action="DisplayProviderPackages" class="fa fa-plane"> MY PACKAGES</a></li>
+
+                                
+
+                              
+                                <li class="divider"></li>
+
+                                <li><a asp-area="" asp-controller="Account" asp-action="Logout" class="fa fa-sign-out fa-fw"> LOGOUT</a></li>
+                            </ul>
+                        </li>
+
+
+                    }
+                    else if (User.Identity.IsAuthenticated && User.IsInRole("Customer"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user fa-2x"></span> @User.Identity.Name <span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">Customer Options</li>
+                                <li><a asp-area="" asp-controller="Profile" asp-action="UpdateCustomerProfile" class="fa fa-edit"> PROFILE</a></li>
+
+                                <li><a asp-area="" asp-controller="Booking" asp-action="Index" class="fa fa-book"> BOOKINGS</a></li>
+
+                                <li class="divider"></li>
+                                <li><a asp-area="" asp-controller="Account" asp-action="Logout" class="fa fa-sign-out"> LOGOUT</a></li>
+                            </ul>
+                        </li>
+                    }
+
+                    else
+                    {
+                        
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">LOGIN</a></li>
+                                <li><a asp-area="" asp-controller="Account" asp-action="Register">REGISTER</a></li> //id="myBtn"
+
+                    }
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    @RenderBody()
+
+    
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 footerleft">
+                        <div class="logofooter"> Travel<span>G</span>rande</div>
+                        <p><em>Quisque posuere turpis tincidunt tincidunt pellentesque. Integer ornare convallis sem vulputate hendrerit. Proin vulputate a risus auctor gravida.</em></p>
+                        <p><i class="fa fa-map-pin"></i> Neutral Bay, Sydney - Australia</p>
+                        <p><i class="fa fa-phone"></i> Phone (AU) : +61 123 456 789</p>
+                        <p><i class="fa fa-envelope"></i> E-mail : henrique_vc@hotmail.com.com</p>
+                    </div>
+                    <div class="col-md-2 col-sm-6 paddingtop-bottom">
+                        <h6 class="heading7">GENERAL LINKS</h6>
+                        <ul class="footer-ul">                            
+                            <li><a href="#"> Privacy Policy</a></li>
+                            <li><a href="#"> Terms & Conditions</a></li>                       
+                            <li><a asp-area="" asp-controller="Home" asp-action="About"> About us</a></li>
+                            <li><a href="#"> Contact me</a></li>                            
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-6 paddingtop-bottom">
+                        <h6 class="heading7">LATEST POST</h6>
+                        <div class="post">
+                            <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
+                            <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
+                            <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 paddingtop-bottom">      
+                       
+                            <blockquote><a href="https://www.facebook.com/facebook"><img alt="facebook icon" src="~/img/svg-icons/facebookIcon2.svg"></a></blockquote>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer start from here-->
+        <div class="copyright">
+            <div class="container">
+                <div class="col-md-6">
+                    <p>© 2016 - All Rights with Webenlance</p>
+                </div>
+                <div class="col-md-6">
+                    <ul class="bottom_ul">
+                        <li><a href="#">webenlance.com</a></li>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Faq's</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+   
+
+
+
+
+    <environment names="Development">
+
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

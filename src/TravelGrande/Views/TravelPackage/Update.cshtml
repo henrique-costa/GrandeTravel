@@ -1,0 +1,86 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model UpdateTravelPackageVM
+<div class="container margin-top margin-bottom">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Update Package</h1>
+        <h5>Change package details</h5>
+        <form asp-controller="TravelPackage" asp-action="Update" method="post" role="form" asp-antiforgery="true">
+            <div asp-validation-summary="ModelOnly">
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <div>
+                    <input class="form-control" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <div>
+                    <textarea class="descriptionTextArea form-control" rows="3" asp-for="Description"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <div>
+                    <input class="form-control" asp-for="State">
+                    <span asp-validation-for="State" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <div>
+                    <input class="form-control" asp-for="Price">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            
+
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <div>
+                    <input class="form-control" asp-for="Location">
+                    <span asp-validation-for="Location" class="text-danger"></span>
+
+                </div>
+            </div>
+            
+
+            <div class="alert alert alert-warning">
+                <span class="fa fa-warning"></span>
+                <label asp-for="Discontinued" class="control-label"></label>
+                <input asp-for="Discontinued" />
+                <p><i>The package still exists but it's not displayed online anymore untill you uncheck this option</i></p>
+                
+            </div>
+
+
+
+
+            <div class="form-group">
+                <div>
+                    <input type="submit" class="btn btn-success" value="Save Changes" />
+                    <a asp-controller="Home" asp-action="Index" class="btn btn-danger" role="button">Cancel</a>
+                </div>
+            </div>
+
+
+
+        </form>
+    </div>
+</div>

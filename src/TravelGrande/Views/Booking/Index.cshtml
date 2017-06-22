@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model DisplayBookingVM
+
+<div class="container margin-top margin-bottom">
+    <h2>List of Bookings</h2>
+
+
+    <div class="row">
+        <table class="table table-striped">
+                <tr>
+                    <th>Booked On</th>
+                    <th>Package Start Date</th>
+                    <th>Package Name</th>
+                    <th>Number of People</th>
+                    <th>Total Cost</th>
+                    <th>Feedback</th>
+                </tr>
+            @foreach (var item in Model.listOfBooking)
+            {
+
+                    <tr>
+                        <td>@item.DateBooked.ToString("dd/MM/yyyy")</td>
+                        <td>@item.StartDate.ToString("dd/MM/yyyy")</td>
+                        <td>@item.PackageName</td>
+                        <td>@item.NumberOfPeople</td>
+                        <td>$@item.TotalPrice</td>
+
+                @if (item.StartDate < DateTime.Today && !item.LeftFeedback)
+                {
+                            <td><a asp-controller="Feedback" asp-action="Create" asp-route-id="@item.BookingId" class="btn btn-sm btn-success" role="button">Provide Feedback</a></td>
+
+                }
+                else if (item.LeftFeedback)
+                {
+                    <td><a asp-controller="TravelPackage" asp-action="Display" asp-route-id="@item.PackageId" class="btn btn-sm btn-success" role="button">Feedback</a></td>
+
+                }
+                    </tr>
+            }
+
+
+        </table>
+
+    </div>
+
+
+
+</div>
+
+
+@*<div class="row align-items-center">
+        <div class="col">
+            One of three columns
+        </div>
+        <div class="col">
+            One of three columns
+        </div>
+        <div class="col">
+            One of three columns
+        </div>
+    </div>*@

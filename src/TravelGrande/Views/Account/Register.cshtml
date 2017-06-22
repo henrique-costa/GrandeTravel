@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "";
+}
+@model RegisterUserVM
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Signin Template for Bootstrap</title>
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/sign-in.css" rel="stylesheet" />
+<body>
+
+    <div class="container">
+        <form asp-controller="Account" class="form-signin" asp-action="Register" method="post" role="form" asp-anti-forgery="true">
+
+            <div asp-validation-summary="ModelOnly" class="danger">
+
+            </div>
+            <h2 class="form-signin-heading">Customer Resgistration:</h2>
+
+            <!--------------------------- USERNAME ---------------------------------->            
+            <label asp-for="Username" class="sr-only" ></label>
+            <input asp-for="Username" class="form-control" placeholder="Username">
+            <span asp-validation-for="Username" class="text-danger"></span>
+
+            <!--------------------------- EMAIL ---------------------------------->
+            <label asp-for="Email" class="sr-only"></label>
+            <input asp-for="Email" class="form-control" placeholder="Email: mail@example.com">
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+            <!--------------------------- PASSWORD ---------------------------------->
+            <label asp-for="Password"  class="sr-only"></label>
+            <input asp-for="Password"  class="form-control" placeholder="Password" >
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <!--------------------------- CONFIRM PASSWORD ---------------------------------->
+            <label asp-for="ConfirmPassword" class="sr-only"></label>
+            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            <br />
+            <div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" value="Register">Register</button>
+            </div>
+            <div>
+                Want to sign as a <b>provider</b>? <a asp-area="" asp-controller="Account" asp-action="RegisterProvider">Click here.</a>
+            </div>
+        </form>
+
+    </div> <!-- /container -->
+</body>
+   

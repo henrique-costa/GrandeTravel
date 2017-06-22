@@ -1,0 +1,363 @@
+﻿/*****************************************************************************************
+*  GLOBAL / Theme color / bold / center text jumbo / thumbnail / margin-top / shadow
+*****************************************************************************************/
+html, body {
+    height: 100%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.grande-color {
+    color: #00bfff !important;
+}
+
+.centerme {
+    position: relative;
+    top: 120px;
+}
+
+.thumbnail {
+    padding: 0;
+    border-radius: 0px;
+}
+
+.margin-top {
+    margin-top: 70px;
+}
+.margin-bottom {
+    margin-bottom: 70px;
+}
+
+
+.shadow {
+    -webkit-box-shadow: 4px 4px 10px -3px rgba(128, 128, 128, 0.4);
+    -moz-box-shadow: 4px 4px 10px -3px rgba(128, 128, 128, 0.4);
+    box-shadow: 4px 4px 10px -3px rgba(128, 128, 128, 0.4);
+}
+
+.jumbotron {
+    margin-bottom: 0;
+}
+
+
+/***********************************************************************
+*  NAVBAR SECTION
+***********************************************************************/
+.navbar li a, .navbar .navbar-brand {
+    color: #ffffff !important;
+}
+
+.navbar-nav li a {
+    -webkit-transition: color .7s;
+    -moz-transition: color .7s;
+    -o-transition: color .7s;
+    transition: color .7s;
+}
+
+    .navbar-nav li a:hover {
+        color: #2A9FD6 !important;
+        /*#2A9FD6*/
+    }
+
+.dropdown a {
+    background-color: #0b2742 !important;
+}
+
+
+.dropdown-menu li a:hover {
+    background-color: #fff;
+}
+
+.dropdown-menu {
+    background-color: #0b2742;
+}
+
+.navbar {
+    /*background-color:#0b2742;*/
+    background-color: rgba(12, 15, 65, 0.7);
+}
+
+
+/***********************************************************************
+*  HOME INFO SECTION
+***********************************************************************/
+.bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+
+
+/***********************************************************************
+*  ANIMATED HOME SEARCH FORM
+***********************************************************************/
+.homeSearch {
+    width: 100%;
+    color: whitesmoke;
+    box-sizing: border-box;
+    border: 2px solid #0E5060;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgba(12, 15, 65, 0.3);
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+
+
+/***********************************************************************
+*  JUMBOTRON BACKGROUND IMAGE
+***********************************************************************/
+.jumbotron {
+    background-size: cover;
+    background-image: url(../img/2400x1800/australia-from-space2.jpg);
+    min-height: 800px;
+    /* Image in the center of container */
+    /*background-position: center center;*/
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*  OR Image in the center top of the container */
+    /*background-position: center top;*/
+    /*  OR Image in the center bottom of the container  */
+    /*background-position: center bottom;*/
+}
+
+
+/***********************************************************************
+*   TRAVELPACKAGE / UPDATE PACKAGE
+***********************************************************************/
+.descriptionTextArea{
+            resize:vertical;
+        }
+
+/***********************************************************************
+*   TRAVELPACKAGE / DISPLAY (SINGLE)
+***********************************************************************/
+#detailsHead {
+    font-size: 56px;
+}
+
+#detailImg {
+    margin-top: 50px;
+}
+
+#price {
+    font-size: 30px;
+}
+
+#panelImage {
+    padding: 0px;
+}
+
+#SocialSharing {
+    font-size: 16px;
+}
+
+.ShareBtns {
+    margin: 10px 5px;
+    font-size: 30px;
+}
+
+#commentList li {
+    list-style: none;
+}
+
+#ReviewList {
+    width: 200px;
+    margin: auto;
+}
+
+#displaySingleBox {
+    /*border:1px solid red;*/
+    padding: 20px;
+    margin-top: 50px;
+}
+
+
+/***********************************************************************
+*   TRAVELPACKAGE / INDEX / Equal Height Columns
+***********************************************************************/
+.IndexThumb {
+    min-height: 165px;
+    max-height: 216px;
+    width: 100%;
+}
+
+.text-color-blue {
+    color: #217dbb;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.location {
+    font-style: italic;
+}
+
+.localIcon {
+    font-size: 20px;
+    color: deeppink;
+}
+
+.packagePrice {
+    font-size: 28px;
+}
+
+
+
+/***********************************************************************
+*   FOOTER
+***********************************************************************/
+footer {
+    background-color: #030418; /*0c1a1e*/
+    min-height: 350px;
+    font-family: 'Open Sans', sans-serif;   
+}
+
+.footerleft {
+    margin-top: 50px;
+    padding: 0 36px;
+    
+}
+
+.logofooter {
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.logofooter::first-letter{
+    color:#49ffe6;
+}
+
+.logofooter > span{
+    color:#49ffe6;
+}
+
+.footerleft p {
+    color: #fff;
+    font-size: 12px !important;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 15px;
+}
+
+    .footerleft p i {
+        width: 20px;
+        color: #49ffe6;
+    }
+
+.paddingtop-bottom {
+    margin-top: 50px;
+}
+
+.footer-ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 2px;
+}
+
+    .footer-ul li {
+        line-height: 29px;
+        font-size: 12px;
+    }
+
+        .footer-ul li a {
+            color: #a0a3a4;
+            transition: color 0.2s linear 0s, background 0.2s linear 0s;
+        }
+
+    .footer-ul i {
+        margin-right: 10px;
+    }
+
+    .footer-ul li a:hover {
+        transition: color 0.2s linear 0s, background 0.2s linear 0s;
+        color: #ff670f;
+    }
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.icon-ul {
+    list-style-type: none !important;
+    margin: 0px;
+    padding: 0px;
+}
+
+    .icon-ul li {
+        line-height: 75px;
+        width: 100%;
+        float: left;
+    }
+
+.icon {
+    float: left;
+    margin-right: 5px;
+}
+
+.copyright {
+    min-height: 40px;
+    background-color: #000000;
+}
+
+    .copyright p {
+        text-align: left;
+        color: #FFF;
+        padding: 10px 0;
+        margin-bottom: 0px;
+    }
+
+.heading7 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #d9d6d6;
+    margin-bottom: 22px;
+}
+
+.post p {
+    font-size: 12px;
+    color: #FFF;
+    line-height: 20px;
+}
+
+    .post p span {
+        display: block;
+        color: #8f8f8f;
+    }
+
+.bottom_ul {
+    list-style-type: none;
+    float: right;
+    margin-bottom: 0px;
+}
+
+    .bottom_ul li {
+        float: left;
+        line-height: 40px;
+    }
+
+        .bottom_ul li:after {
+            content: "/";
+            color: #FFF;
+            margin-right: 8px;
+            margin-left: 8px;
+        }
+
+        .bottom_ul li a {
+            color: #FFF;
+            font-size: 12px;
+        }
+
+
+        
