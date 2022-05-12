@@ -3,7 +3,7 @@ TAFE Diploma in Software Development Project
 
 Projeto feito durante o Diploma em Software Dev no TAFE
 
-O projeto se trata de um Travel Packages (Pacotes de viagem). Construido com arquitetura MVC, Dependency Injection e database com Entity Framework em C# (Code first), alem do front-end em HTML, CSS, Js, Bootstrap e jQuery.
+O projeto se trata de um Travel Packages (Pacotes de viagem). Construido com arquitetura MVC, Dependency Injection e database com Entity Framework Core em C# (Code first), alem do front-end em HTML, CSS, Js, Bootstrap e jQuery.
 
 
 Existem 3 roles: Admin, Travel Agent e Consumidor (Customer)
