@@ -1,16 +1,28 @@
-# GrandeTravel
-TAFE Diploma in Software Development Project
+GrandeTravel
 
-Projeto feito durante o Diploma em Software Dev no TAFE
+Sydney Australia TAFE Diploma in Software Development Project 2016
 
-O projeto se trata de um Travel Packages (Pacotes de viagem). Construido com arquitetura MVC, Dependency Injection e database com Entity Framework Core em C# (Code first), alem do front-end em HTML, CSS, Js, Bootstrap e jQuery.
+This project was developed during the TAFE Diploma in Software Development program.
 
+GrandeTravel is a Travel Packages management system built using MVC architecture, Dependency Injection, and Entity Framework Core (Code First) with C#.
+The front-end was developed using HTML, CSS, JavaScript, Bootstrap, and jQuery.
 
-Existem 3 roles: Admin, Travel Agent e Consumidor (Customer)
+User Roles
 
--ADMIN: Controla a maioria das funcoes no background, adciona ou descontinua Agentes ou Consumidores.
+The system includes three roles: Admin, Travel Agent, and Customer.
 
--AGENTE: Possui as funcoes CRUD (Create, Read, Update, Delete) para manejar os pacotes de viagem. Exemplo: criar o pacote, escolher titulo, descriçao, preço, localizaçao etc. Tem tambem a funcao de descontinuar um pacote (o pacote de viagem nao é deletado do database, apenas "esconde" o pacote para futuros clientes.
+Admin
 
--CONSUMIDOR: Filtro e busca (search) por pacotes de viagem, ativa um booking na qual é gerado uma confirmação sobre a data e o preço do pacote levando em conta o numero de pessoas inclusas. 
+Responsible for managing most system operations in the background.
+Can add or deactivate Travel Agents and Customers.
 
+Travel Agent
+
+Has full CRUD (Create, Read, Update, Delete) functionality to manage travel packages.
+For example, agents can create packages, define the title, description, price, location, and other details.
+Agents can also discontinue a package. In this case, the package is not deleted from the database; it is simply hidden from customers.
+
+Customer
+
+Can filter and search for travel packages.
+Customers can create a booking, which generates a confirmation including the selected date and the total price based on the number of people included.
